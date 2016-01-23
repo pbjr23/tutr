@@ -1,2 +1,10 @@
 <template name="chat">
+  {{#each messages}}
+    <strong>{{ user_id }}</strong>: {{ msg }}
+    <br>
+  {{/each}}
+  <hr>
+  <form class="msg-text">
+    <input type="text" name="text" autocomplete="off" placeholder="Type a message..." />
+  </form>
 </template>
