@@ -8,6 +8,9 @@ Template.chat.helpers({
     }
     return Meteor.users.findOne({_id: id}).nickname;
   },
+  'isTutor': function () {
+    return Meteor.user() == this.tutor_id;
+  },
   'myLocation': function () {
   },
   'otherLocation': function () {

@@ -11,4 +11,9 @@
   <button class="video-call">Video Call</button>
   <hr>
   <button class="in-person">In Person Meeting</button>
+  <hr>
+  {{#if isTutor}}
+    <h4>Profile</h4>
+    Nickname: <strong>{{ nickname }}</strong>
+  {{/if}}
 </template>
