@@ -3,6 +3,7 @@ Template.chat.helpers({
     return [];
   },
   'myLocation': function () {
+    return Geolocation.currentLocation();
   },
   'otherLocation': function () {
   }
