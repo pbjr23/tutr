@@ -1,6 +1,6 @@
 <template name="chat">
   {{#each messages}}
-    <strong>{{ user_id }}</strong>: {{ msg }}
+    <strong>{{ nickname isTutor }}</strong>: {{ msg }}
     <br>
   {{/each}}
   <hr>

@@ -1,4 +1,13 @@
 Template.chat.helpers({
+  'nickname': function (isTutor) {
+    var id;
+    if (isTutor) {
+      id = this.tutor_id;
+    } else {
+      id = this.user_id;
+    }
+    return Meteor.users.findOne({_id: id}).nickname;
+  },
   'myLocation': function () {
   },
   'otherLocation': function () {
@@ -15,8 +24,9 @@ Template.chat.events({
   'submit .msg-text': function (e) {
     e.preventDefault();
     var text = e.target.text.value;
+    var isTutor = Meteor.user() == this.tutor_id;
     var message = {
-      user_id: 'foo',
+      isTutor,
       msg: text,
       ts: new Date()
     };
